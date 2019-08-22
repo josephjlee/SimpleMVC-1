@@ -1,2 +1,2 @@
 # SimpleMVC
-This is a small php framework with namespace and routing.
+This is a small MVC php framework with namespace and routing.
