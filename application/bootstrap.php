@@ -2,15 +2,12 @@
 use Core\Route;
 use Core\View;
 
-define("PATH", getcwd());
-define("S", DIRECTORY_SEPARATOR);
-
 // include files
 spl_autoload_register( function($classname) {
 	$add = "";
-	if( !in_array( reset( explode("\\", trim($classname, "\\") ) ), ["Core", "Controllers", "Models"] ) ) $add = "Libs".S;
+	if( !in_array( reset( explode("\\", trim($classname, "\\") ) ), ["Core", "Controllers", "Models"] ) ) $add = "Libs/";
 	
-	$path = realpath( PATH.S."application".S.$add.str_replace("\\", S, $classname ).".php");
+	$path = realpath( "application/".$add.str_replace("\\", "/", $classname ).".php" );
 	if($path)
 		require_once($path);	
 } );
