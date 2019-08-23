@@ -31,7 +31,7 @@ class Route
 		self::$requestedUrlArr = $arr = explode("/", $requestedUrl);
 		$param = end($arr);
 		array_pop($arr);
-		$url = implode("/", $arr)."/$1";
+		$url = implode("/", $arr)."/:any";
 		if( isset(self::$routes[$url]) ) {
 			self::$param = $param;
 			return self::execute(self::$routes[$url]);

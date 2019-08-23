@@ -13,7 +13,7 @@ spl_autoload_register( function($classname) {
 } );
 
 //route
-Route::add("/test/$1", "Controllers\Test@index"); 
+Route::add("/test/:any", "Controllers\Test@index"); 
 Route::add("/", "Controllers\Test@index");
 Route::add("", "Controllers\Test@index");
 Route::start(); 
