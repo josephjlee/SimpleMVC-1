@@ -39,7 +39,7 @@ class Route
 
 		if(self::$auto) return self::auto();
 		
-		Route::errorPage404();
+		self::errorPage404();
 	}
 	public static function execute($handle) {
 		if ( is_callable($handle) ) {
@@ -74,9 +74,9 @@ class Route
 			if ( method_exists($controller, $action_name) )
 				$controller->$action_name();
 			else 
-				Route::errorPage404();
+				self::errorPage404();
 		} else 
-			Route::errorPage404();
+			self::errorPage404();
 	}
 	
 	public static function errorPage404()
